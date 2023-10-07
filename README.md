@@ -51,8 +51,8 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Display the calculator on load**
-- **Perform basic math operations**
+- **Display Books**
+- **Add books**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -81,7 +81,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/FilbertKimasa/math-magicians.git
+  git clone https://github.com/FilbertKimasa/book-store.git
 ```
 
 ### Install
@@ -89,7 +89,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd math-magicians
+  cd book-store
   npm install
 ```
 
@@ -135,7 +135,7 @@ You can deploy this project using [GitHub Pages](https://pages.github.com/)
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/FilbertKimasa/math-magicians/issues).
+Feel free to check the [issues page](https://github.com/FilbertKimasa/book-store/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
