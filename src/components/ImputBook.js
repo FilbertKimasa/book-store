@@ -22,7 +22,7 @@ function ImputBook() {
           <option value="milk">Wealth</option>
         </select>
         <button type="submit" className="input-submit">
-          Submit
+          ADD BOOK
         </button>
       </form>
     </>

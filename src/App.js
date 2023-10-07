@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import BooksLogic from './components/BooksLogic';
 import Navigation from './components/Navigation';
 import BookCategory from './components/BookCategory';
+import './styles/App.css';
 
 function App() {
   return (
