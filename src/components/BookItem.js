@@ -11,7 +11,7 @@ function BookItem({ itemProp }) {
 
       <button
         type="button"
-        onClick={() => dispatch(removeBook({ id: itemProp.id }))}
+        onClick={() => dispatch(removeBook({ id: itemProp.item_id }))}
       >
         Delete
       </button>
