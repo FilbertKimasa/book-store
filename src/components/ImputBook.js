@@ -1,18 +1,35 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../redux/books/booksSlice';
 
 function ImputBook() {
+  const dispatch = useDispatch();
+  const [title, setTitle] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (title.trim()) {
+      dispatch(addBook({ id: uuidv4(), title }));
+      setTitle('');
+    }
+  };
+  const handleChange = (e) => {
+    setTitle(e.target.value);
+  };
   return (
     <>
       <p>ADD NEW BOOK</p>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Book title"
           className="input-text"
+          value={title}
+          onChange={handleChange}
           required
         />
-        <select name="drinks" required>
+        <select name="category">
           <option value="" disabled selected hidden>
             Category
           </option>
