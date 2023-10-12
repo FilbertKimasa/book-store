@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/booksSlice';
 
 function BookItem({ itemProp }) {
+  const dispatch = useDispatch();
   return (
     <li>
       <span>{itemProp.title}</span>
-      <button type="button">Delete</button>
+
+      <button
+        type="button"
+        onClick={() => dispatch(removeBook({ id: itemProp.id }))}
+      >
+        Delete
+      </button>
     </li>
   );
 }
