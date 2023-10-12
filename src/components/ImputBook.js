@@ -10,7 +10,7 @@ function ImputBook() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title.trim()) {
-      dispatch(addBook({ id: uuidv4(), title }));
+      dispatch(addBook({ item_id: uuidv4(), title }));
       setTitle('');
     }
   };
