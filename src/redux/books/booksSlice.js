@@ -1,7 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  books: [],
+  books: [
+    {
+      id: 1,
+      title: 'Things Fall Apart',
+    },
+    {
+      id: 2,
+      title: 'Think Like a Man',
+    },
+    {
+      id: 3,
+      title: 'C++ Primer 5th Edition',
+    },
+  ],
 };
 
 const bookSlice = createSlice({
