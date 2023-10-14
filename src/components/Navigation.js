@@ -4,7 +4,7 @@ import userIcon from '../assets/userIcon.png';
 
 function Navigation() {
   return (
-    <section>
+    <section className="panel-bg">
       <Link to="/">Bookstore CMS</Link>
       <nav>
         <ul>
@@ -16,6 +16,9 @@ function Navigation() {
           </li>
         </ul>
       </nav>
+      <div>
+        <img src={userIcon} alt="user-icon" />
+      </div>
     </section>
   );
 }
