@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import userIcon from '../assets/userIcon.png';
 
 function Navigation() {
   return (
