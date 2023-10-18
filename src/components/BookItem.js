@@ -20,7 +20,7 @@ function BookItem({ itemProp }) {
 }
 
 BookItem.propTypes = {
-  itemProp: PropTypes.arrayOf(
+  itemProp: PropTypes.objectOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
