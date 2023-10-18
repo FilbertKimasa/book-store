@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import userIcon from '../assets/userIcon.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+
+// import userIcon from '../assets/userIcon.png';
 
 function Navigation() {
   return (
@@ -16,9 +19,7 @@ function Navigation() {
           </li>
         </ul>
       </nav>
-      <div>
-        <img src={userIcon} alt="user-icon" />
-      </div>
+      <FontAwesomeIcon icon={faUser} />
     </section>
   );
 }
