@@ -4,7 +4,7 @@ import axios from 'axios';
 const appId = 'mNREEw9h9XER47NhKQkA';
 
 const initialState = {
-  books: [],
+  books: {},
   isLoading: false,
   error: undefined,
 };
@@ -22,29 +22,29 @@ const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
 });
 
 const addBook = createAsyncThunk('books/addBook', async (bookData) => {
-  const response = await axios.post(
+  await axios.post(
     `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books`,
     bookData,
   );
 
-  if (response.status !== 200) {
-    throw new Error('Failed to add a book');
-  }
-
-  const addedBook = response.data;
+  const addedBook = {
+    [bookData.item_id]: [
+      {
+        title: bookData.title,
+        author: bookData.author,
+        category: bookData.category,
+      },
+    ],
+  };
   return addedBook;
 });
 
 const removeBook = createAsyncThunk('books/removeBook', async (bookId) => {
-  const response = await axios.delete(
+  await axios.delete(
     `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${appId}/books/${bookId.item_id}`,
   );
 
-  if (response.status !== 200) {
-    throw new Error('Failed to remove the book');
-  }
-
-  return bookId;
+  return bookId.item_id;
 });
 
 const bookSlice = createSlice({
@@ -67,10 +67,15 @@ const bookSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(addBook.fulfilled, (state, action) => {
-        state.books = action.payload;
+        state.books = { ...state.books, ...action.payload };
       })
       .addCase(removeBook.fulfilled, (state, action) => {
-        state.books = action.payload;
+        state.books = Object.keys(state.books).reduce((acc, key) => {
+          if (key !== action.payload) {
+            acc[key] = state.books[key];
+          }
+          return acc;
+        }, {});
       });
   },
 });
