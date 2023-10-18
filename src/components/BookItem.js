@@ -11,7 +11,7 @@ function BookItem({ itemProp }) {
 
       <button
         type="button"
-        onClick={() => dispatch(removeBook({ id: itemProp.item_id }))}
+        onClick={() => dispatch(removeBook({ item_id: itemProp.item_id }))}
       >
         Delete
       </button>
@@ -20,7 +20,7 @@ function BookItem({ itemProp }) {
 }
 
 BookItem.propTypes = {
-  itemProp: PropTypes.arrayOf(
+  itemProp: PropTypes.objectOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,

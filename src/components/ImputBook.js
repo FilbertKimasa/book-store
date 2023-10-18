@@ -5,17 +5,41 @@ import { addBook } from '../redux/books/booksSlice';
 
 function ImputBook() {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState('');
+  const [formData, setFormData] = useState({
+    title: '',
+    author: '',
+    category: '',
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title.trim()) {
-      dispatch(addBook({ item_id: uuidv4(), title }));
-      setTitle('');
+    if (formData.title.trim() && formData.author.trim()) {
+      dispatch(
+        addBook({
+          item_id: uuidv4(),
+          title: formData.title,
+          author: formData.author,
+          category: formData.category,
+        }),
+      );
+      setFormData({
+        ...formData,
+        title: '',
+        author: '',
+      });
     }
   };
-  const handleChange = (e) => {
-    setTitle(e.target.value);
+
+  const handleTitleChange = (e) => {
+    setFormData({ ...formData, title: e.target.value });
+  };
+
+  const handleAuthorChange = (e) => {
+    setFormData({ ...formData, author: e.target.value });
+  };
+
+  const handleCategoryChange = (e) => {
+    setFormData({ ...formData, category: e.target.value });
   };
   return (
     <>
@@ -25,18 +49,28 @@ function ImputBook() {
           type="text"
           placeholder="Book title"
           className="input-text"
-          value={title}
-          onChange={handleChange}
+          value={formData.title}
+          onChange={handleTitleChange}
           required
         />
-        <select name="category">
-          <option value="" disabled selected hidden>
+
+        <input
+          type="text"
+          placeholder="Book Author"
+          className="input-text"
+          value={formData.author}
+          onChange={handleAuthorChange}
+          required
+        />
+
+        <select name="category" onChange={handleCategoryChange}>
+          <option value={formData.category} disabled selected hidden>
             Category
           </option>
-          <option value="tea">Finction</option>
-          <option value="milk">Biography</option>
-          <option value="milk">Academic</option>
-          <option value="milk">Wealth</option>
+          <option value="Finction">Finction</option>
+          <option value="Biography">Biography</option>
+          <option value="Academic">Academic</option>
+          <option value="Wealth">Wealth</option>
         </select>
         <button type="submit" className="input-submit">
           ADD BOOK
