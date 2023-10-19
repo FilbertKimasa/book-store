@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import BookItem from './BookItem';
 import { fetchBooks } from '../redux/books/booksSlice';
+import '../styles/BookList.css';
 
 function BookList() {
   const dispatch = useDispatch();
@@ -11,12 +12,12 @@ function BookList() {
   }, [dispatch]);
 
   return (
-    <ul>
+    <section className="display-books">
       {Object.keys(books).map((key) => {
         const book = { ...books[key][0], item_id: key };
         return <BookItem key={book.item_id} itemProp={book} />;
       })}
-    </ul>
+    </section>
   );
 }
 
