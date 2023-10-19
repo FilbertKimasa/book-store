@@ -49,7 +49,7 @@ function ImputBook() {
         <input
           type="text"
           placeholder="Book title"
-          className="input-text"
+          className="form-field"
           value={formData.title}
           onChange={handleTitleChange}
           required
@@ -58,13 +58,17 @@ function ImputBook() {
         <input
           type="text"
           placeholder="Book Author"
-          className="input-text"
+          className="form-field"
           value={formData.author}
           onChange={handleAuthorChange}
           required
         />
 
-        <select name="category" onChange={handleCategoryChange}>
+        <select
+          name="category"
+          onChange={handleCategoryChange}
+          className="form-field"
+        >
           <option value={formData.category} disabled selected hidden>
             Category
           </option>
@@ -73,7 +77,7 @@ function ImputBook() {
           <option value="Academic">Academic</option>
           <option value="Wealth">Wealth</option>
         </select>
-        <button type="submit" className="input-submit">
+        <button type="submit" className="input-submit form-field">
           ADD BOOK
         </button>
       </form>
