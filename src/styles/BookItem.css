@@ -106,6 +106,12 @@
   color: var(--black-two);
 }
 
+.curent-status {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .completed {
   width: 5rem;
   height: 1.125rem;
