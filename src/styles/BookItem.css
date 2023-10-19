@@ -9,6 +9,18 @@
   background-color: var(--white-two);
 }
 
+.book-category {
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
 .Line-2 {
   width: 0.125rem;
   height: 4.375rem;
