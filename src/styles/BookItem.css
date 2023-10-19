@@ -116,7 +116,7 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: var(--black-two);
+  color: #121212;
 }
 
 .curent-status {
@@ -163,7 +163,7 @@
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.4px;
-  color: var(--black-two);
+  color: #121212;
 }
 
 .Update-progress-btn {
