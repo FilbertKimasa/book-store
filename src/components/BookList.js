@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import BookItem from './BookItem';
 import { fetchBooks } from '../redux/books/booksSlice';
-import '../styles/BookList.css';
 
 function BookList() {
   const dispatch = useDispatch();
