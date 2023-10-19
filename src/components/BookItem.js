@@ -29,20 +29,22 @@ function BookItem({ itemProp }) {
         </div>
       </div>
       <div className="progress-status">
-        <div>
+        <div className="progress-status completion-status">
           <span>
             <div className="Oval-2" />
           </span>
           <span>
-            <p>64</p>
-            <p>Completed</p>
+            <p className="complete-percent">64</p>
+            <p className="completed">Completed</p>
           </span>
         </div>
         <div className="Line-2" />
-        <div>
+        <div className="curent-status">
           <h3>Current chapter</h3>
           <p>chapter 7</p>
-          <button type="button">UPDATE PROGRESS</button>
+          <button type="button" className="Update-progress-btn">
+            UPDATE PROGRESS
+          </button>
         </div>
       </div>
     </article>
