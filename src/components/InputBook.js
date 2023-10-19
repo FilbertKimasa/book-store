@@ -69,6 +69,7 @@ function ImputBook() {
           name="category"
           onChange={handleCategoryChange}
           className="form-field categories"
+          required
         >
           <option value={formData.category} disabled selected hidden>
             Category
