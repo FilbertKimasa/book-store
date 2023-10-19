@@ -1,11 +1,11 @@
 import BookList from './BookList';
-import ImputBook from './ImputBook';
+import InputBook from './InputBook';
 
 function BooksLogic() {
   return (
     <div>
       <BookList />
-      <ImputBook />
+      <InputBook />
     </div>
   );
 }

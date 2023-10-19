@@ -21,6 +21,51 @@
   color: var(--black-two);
 }
 
+.book-title {
+  margin: 0.188rem 20.188rem 0 0;
+  font-family: RobotoSlab;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: var(--black-two);
+}
+
+.book-author {
+  margin: 0.25rem 0 0;
+  font-family: RobotoSlab;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.book-buttons {
+  margin: 0.988rem 0.938rem 0.125rem 0;
+  font-family: RobotoSlab;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  background-color: #fff;
+  color: #4386bf;
+  border: none;
+}
+
+.remove-btn {
+  border-left: solid 1px #e8e8e8;
+  border-right: solid 1px #e8e8e8;
+  padding: 5px 15px 5px 15px;
+  cursor: pointer;
+}
+
 .Line-2 {
   width: 0.125rem;
   height: 4.375rem;
