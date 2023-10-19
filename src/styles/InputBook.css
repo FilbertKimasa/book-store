@@ -51,3 +51,8 @@
   outline: none;
   border: 2px solid #888;
 }
+
+.input-submit:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
