@@ -44,7 +44,7 @@ function ImputBook() {
   };
   return (
     <section className="input-section">
-      <p>ADD NEW BOOK</p>
+      <h2 className="add-book-title">ADD NEW BOOK</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
