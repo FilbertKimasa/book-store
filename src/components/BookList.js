@@ -11,12 +11,12 @@ function BookList() {
   }, [dispatch]);
 
   return (
-    <ul>
+    <section className="display-books">
       {Object.keys(books).map((key) => {
         const book = { ...books[key][0], item_id: key };
         return <BookItem key={book.item_id} itemProp={book} />;
       })}
-    </ul>
+    </section>
   );
 }
 

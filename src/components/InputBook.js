@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/booksSlice';
+import '../styles/InputBook.css';
 
 function ImputBook() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function ImputBook() {
         ...formData,
         title: '',
         author: '',
+        category: 'Category',
       });
     }
   };
@@ -42,13 +44,13 @@ function ImputBook() {
     setFormData({ ...formData, category: e.target.value });
   };
   return (
-    <>
-      <p>ADD NEW BOOK</p>
+    <section className="input-section">
+      <h2 className="add-book-title">ADD NEW BOOK</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Book title"
-          className="input-text"
+          className="form-field form-input"
           value={formData.title}
           onChange={handleTitleChange}
           required
@@ -57,13 +59,18 @@ function ImputBook() {
         <input
           type="text"
           placeholder="Book Author"
-          className="input-text"
+          className="form-field form-input"
           value={formData.author}
           onChange={handleAuthorChange}
           required
         />
 
-        <select name="category" onChange={handleCategoryChange}>
+        <select
+          name="category"
+          onChange={handleCategoryChange}
+          className="form-field categories"
+          required
+        >
           <option value={formData.category} disabled selected hidden>
             Category
           </option>
@@ -72,11 +79,11 @@ function ImputBook() {
           <option value="Academic">Academic</option>
           <option value="Wealth">Wealth</option>
         </select>
-        <button type="submit" className="input-submit">
+        <button type="submit" className="input-submit form-field">
           ADD BOOK
         </button>
       </form>
-    </>
+    </section>
   );
 }
 
