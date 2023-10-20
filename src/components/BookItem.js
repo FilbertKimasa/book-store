@@ -34,7 +34,7 @@ function BookItem({ itemProp }) {
             <div className="Oval-2 progress-margin" />
           </span>
           <span>
-            <p className="complete-percent">64</p>
+            <p className="complete-percent">64%</p>
             <p className="completed">Completed</p>
           </span>
         </div>
